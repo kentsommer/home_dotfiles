@@ -1,0 +1,7 @@
+[user]
+name = "Kent Sommer"
+email = "work@kentsommer.com"
+
+[ui]
+editor = "nvim"
+default-command = "log"

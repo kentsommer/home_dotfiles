@@ -1,0 +1,95 @@
+start-at-login = true
+
+[gaps]
+inner.horizontal = 4
+inner.vertical =   4
+outer.left =       4
+outer.bottom =     4
+outer.top =        4
+outer.right =      4
+
+[mode.main.binding]
+
+# =========================================================
+# USER REQUESTS
+# =========================================================
+
+# Open Terminal
+alt-enter = 'exec-and-forget open -na Ghostty'
+
+# Open Browser
+alt-shift-b = 'exec-and-forget open -na "Google Chrome"'
+
+# Open File Browser
+alt-shift-f = 'exec-and-forget open -na Ghostty --args -e ~/.nix-profile/bin/yazi'
+
+# Close the focused window
+alt-w = 'close --quit-if-last-window' 
+
+# Toggle window fullscreen
+alt-f = 'fullscreen'
+
+# =========================================================
+# VIM NAVIGATION (Focus)
+# =========================================================
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
+
+# =========================================================
+# VIM NAVIGATION (Move Window)
+# =========================================================
+alt-shift-h = 'move left'
+alt-shift-j = 'move down'
+alt-shift-k = 'move up'
+alt-shift-l = 'move right'
+
+# =========================================================
+# LAYOUT & UTILS (i3 inspired)
+# =========================================================
+
+# Toggle between tiling layout and floating
+alt-shift-space = 'layout floating tiling'
+
+# Reload Config (Essential for tweaking)
+alt-shift-r = 'reload-config'
+
+# =========================================================
+# WORKSPACES
+# =========================================================
+
+# Switch to workspace
+alt-1 = 'workspace 1'
+alt-2 = 'workspace 2'
+alt-3 = 'workspace 3'
+alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
+alt-6 = 'workspace 6'
+alt-7 = 'workspace 7'
+alt-8 = 'workspace 8'
+alt-9 = 'workspace 9'
+
+# Move window to workspace
+alt-shift-1 = 'move-node-to-workspace 1'
+alt-shift-2 = 'move-node-to-workspace 2'
+alt-shift-3 = 'move-node-to-workspace 3'
+alt-shift-4 = 'move-node-to-workspace 4'
+alt-shift-5 = 'move-node-to-workspace 5'
+alt-shift-6 = 'move-node-to-workspace 6'
+alt-shift-7 = 'move-node-to-workspace 7'
+alt-shift-8 = 'move-node-to-workspace 8'
+alt-shift-9 = 'move-node-to-workspace 9'
+
+# =========================================================
+# RESIZE MODE
+# =========================================================
+alt-r = 'mode resize'
+
+[mode.resize.binding]
+h = 'resize width -50'
+j = 'resize height +50'
+k = 'resize height -50'
+l = 'resize width +50'
+enter = 'mode main'
+esc = 'mode main'
