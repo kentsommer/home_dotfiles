@@ -33,6 +33,7 @@
 * `noto-fonts-emoji`
 * `zen-browser`
 * `rofi`
+* `cronie`
 
 ### OSX only
 * `aerospace`

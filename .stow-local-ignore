@@ -26,3 +26,5 @@ _darcs
 # Setup script
 setup.sh
 
+# Jujutsu
+\.jj
