@@ -1,5 +1,5 @@
 command = "fish"
-font-family = "Google Sans Code NF:style=Regular"
+font-family = "FiraCode Nerd Font Mono:style=Regular"
 theme = "TokyoNight"
 shell-integration = "fish"
 confirm-close-surface = "false"

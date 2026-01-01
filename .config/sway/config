@@ -18,10 +18,10 @@ set $term ghostty
 set $browser zen-browser
 
 # Application launcher
-set $menu wmenu-run
+set $menu rofi -show drun
 
 # Font
-font Google Sans Code NF:style=Regular 11
+font FiraCode Nerd Font Mono:style=Regular 11
 
 # Disable title bars
 default_border pixel 3

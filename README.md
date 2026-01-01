@@ -16,6 +16,7 @@
 * `fastfetch`
 * `fzf`
 * `less`
+* `1password`
 
 # Linux only
 * `sway`
@@ -30,6 +31,9 @@
 * `bluez-utils`
 * `fortune-mod`
 * `noto-fonts-emoji`
+* `zen-browser`
+* `rofi`
 
 # OSX only
 * `aerospace`
+* `alfred`
