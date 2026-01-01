@@ -1,4 +1,4 @@
-### Usage
+# Usage
 * `./setup.sh`
 
 ## General Required Packages
@@ -18,7 +18,7 @@
 * `less`
 * `1password`
 
-# Linux only
+### Linux only
 * `sway`
 * `swaybg`
 * `swayidle`
@@ -34,6 +34,6 @@
 * `zen-browser`
 * `rofi`
 
-# OSX only
+### OSX only
 * `aerospace`
 * `alfred`
