@@ -28,8 +28,8 @@ default_border pixel 3
 
 ### Output configuration
 #
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/.wallpapers/morning.jpg fill
+# Run the wallpaper script immediately on reload/startup
+exec_always ~/.scripts/update_wallpaper.sh
 #
 # Example configuration:
 #
