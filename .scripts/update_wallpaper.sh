@@ -84,11 +84,8 @@ fi
 
 # 3. CHANGE DETECTION
 if [ -f "$STATE_FILE" ] && [ "$(cat "$STATE_FILE")" == "$IMAGE" ]; then
-    # Exit if not running in a terminal (automated run)
-    if [[ ! -t 1 ]]; then
-        exit 0
-    fi
-    log_message "Manual run: No change detected, but forcing update anyway."
+    log_message "No change detected, exiting."
+    exit 0
 fi
 
 # 4. APPLY WALLPAPER
