@@ -39,4 +39,4 @@ require("lsp")
 --------------------------
 -- Google Plugin Extras --
 --------------------------
-require("google")
+pcall(require, "google")
