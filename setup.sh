@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-stow -t ~ .
+stow --no-folding -t ~ .
 ~/.scripts/update_wallpaper.sh
