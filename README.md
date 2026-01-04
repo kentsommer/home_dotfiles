@@ -23,6 +23,7 @@
 * `hyprlauncher`
 * `hyprlock`
 * `hyprpaper`
+* `hypridle`
 * `hyprpolkitagent`
 * `dunst`
 * `lib-notify`
