@@ -9,7 +9,7 @@
 * `ghostty`
 * `jujutsu`
 * `mpv`
-* `ranger`
+* `yazi`
 * `firacode-nerd`
 * `zellij`
 * `btop`
@@ -19,21 +19,22 @@
 * `1password`
 
 ### Linux only
-* `sway`
-* `swaybg`
-* `swayidle`
-* `swayimg`
-* `swaylock`
-* `swaync`
+* `hyprland`
+* `hyprlauncher`
+* `hyprlock`
+* `hyprpaper`
+* `hyprpolkitagent`
+* `dunst`
+* `lib-notify`
+* `ly-dm`
+* `xdg-desktop-portal-hyprland`
+* `cliphist`
 * `impala`
 * `bluetui`
 * `bluez`
 * `bluez-utils`
-* `fortune-mod`
 * `noto-fonts-emoji`
 * `zen-browser`
-* `rofi`
-* `cronie`
 
 ### OSX only
 * `aerospace`
