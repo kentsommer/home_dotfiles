@@ -36,7 +36,8 @@
     "wireplumber": {
         "format": "\udb81\udd7e {volume}%",
         "max-volume": 100,
-        "scroll-step": 5
+        "scroll-step": 5,
+        "on-click": "ghostty --class=com.user.wiremix -e wiremix"
     },
 
     "battery": {
@@ -61,20 +62,20 @@
         "format-wifi": "{icon}",
         "format-disconnected": "\udb83\udc9c",
         "format-icons": ["\udb82\udd2f", "\udb82\udd1f", "\udb82\udd22", "\udb82\udd25", "\udb82\udd28"],
-        "on-click": "ghostty --class=com.user.impala -e impala",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)",
         "tooltip-format-ethernet": "{ifname}",
-        "tooltip-format-disconnected": "Disconnected"
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "ghostty --class=com.user.impala -e impala"
     },
 
     "bluetooth": {
         "format": "\udb80\udcaf",
-        "on-click": "ghostty --class=com.user.bluetui -e bluetui",
         "format-disabled": "\udb80\udcb2",
         "format-connected": "\udb80\udcb1",
         "tooltip-format": "{controller_alias}\t{controller_address}",
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "on-click": "ghostty --class=com.user.bluetui -e bluetui"
     },
 
     "hyprland/language": {
