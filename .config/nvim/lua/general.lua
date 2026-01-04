@@ -36,3 +36,6 @@ vim.g.netrw_banner = 0
 vim.g.netrw_browse_split = 2
 vim.g.netrw_winsize = 25
 
+local function file_exists(path)
+  return vim.loop.fs_stat(path) ~= nil
+end

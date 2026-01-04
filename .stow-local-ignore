@@ -30,3 +30,4 @@ setup.sh
 \.jj
 
 ^/lazy-lock.json.*
+^/hyprpaper.conf.*

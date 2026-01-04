@@ -1,7 +1,7 @@
 -------------
--- Options --
+-- General --
 -------------
-require("options")
+require("general")
 
 -------------
 -- Plugins --
@@ -21,4 +21,4 @@ require("lsp")
 --------------------------
 -- Google Plugin Extras --
 --------------------------
-pcall(require, "google")
+require("conditional_requires")

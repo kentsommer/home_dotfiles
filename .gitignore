@@ -3,3 +3,4 @@
 .wallpapers/.wallpaper_log
 .config/fish/fish_variables
 .config/nvim/lazy-lock.json
+.config/hypr/hyprpaper.conf
