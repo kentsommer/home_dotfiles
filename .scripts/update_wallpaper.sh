@@ -28,21 +28,45 @@ log_message() {
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     SERVICE_DIR="$HOME/.config/systemd/user"
     mkdir -p "$SERVICE_DIR"
-    SERVICE_CONTENT="[Unit]
+    
+    # 1.1 Wallpaper Updater Service (OneShot)
+    if [[ ! -f "$SERVICE_DIR/wallpaper.service" ]]; then
+        cat <<EOF > "$SERVICE_DIR/wallpaper.service"
+[Unit]
 Description=Update wallpaper based on time
 After=graphical-session.target
 [Service]
 Type=oneshot
-ExecStart=/bin/bash \"$SCRIPT_PATH\"
+ExecStart=/bin/bash "$SCRIPT_PATH"
 StandardOutput=append:$LOG_FILE
 StandardError=append:$LOG_FILE
 [Install]
-WantedBy=graphical-session.target"
-
-    if [[ ! -f "$SERVICE_DIR/wallpaper.service" ]] || [[ "$(cat "$SERVICE_DIR/wallpaper.service")" != "$SERVICE_CONTENT" ]]; then
-        echo "$SERVICE_CONTENT" > "$SERVICE_DIR/wallpaper.service"
+WantedBy=graphical-session.target
+EOF
         systemctl --user daemon-reload
     fi
+    
+    # 1.2 Hyprpaper Daemon Service
+    if [[ ! -f "$SERVICE_DIR/wallpaper.service" ]]; then
+        cat <<EOF > "$SERVICE_DIR/hyprpaper.service"
+[Unit]
+Description=Hyprpaper Wallpaper Daemon
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/env hyprpaper
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target
+EOF
+
+        systemctl --user daemon-reload
+        systemctl --user enable hyprpaper.service
+    fi
+
+    # 1.3 Timer
     if [[ ! -f "$SERVICE_DIR/wallpaper.timer" ]]; then
         cat <<EOF > "$SERVICE_DIR/wallpaper.timer"
 [Unit]
@@ -116,7 +140,8 @@ wallpaper {
 }
 EOF
     else
-        for MON in $MONITORS; do
+        for MON in $MONITORS;
+ do
             cat <<EOF >> "$HYPR_CONF"
 splash = false
 
@@ -128,10 +153,8 @@ EOF
         done
     fi
 
-    # Restart process
-    pkill hyprpaper
-    sleep 0.3
-    hyprpaper &
+    systemctl --user restart hyprpaper.service
+    log_message "Restarted hyprpaper.service"
     
     log_message "Applied $IMAGE via wallpaper block. Monitors: ${MONITORS:-wildcard}"
     echo "$IMAGE" > "$STATE_FILE"
