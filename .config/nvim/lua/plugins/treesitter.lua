@@ -1,9 +1,7 @@
 return {
-  'nvim-treesitter/nvim-treesitter',
-  lazy = false,
-  build = ':TSUpdate',
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
   opts = {
-    -- custom handling of parsers
     ensure_installed = {
       "bash",
       "c",
@@ -25,20 +23,12 @@ return {
       "vimdoc",
       "yaml",
     },
+    auto_install = true,
+    highlight = {
+      enable = true,
+    },
+    indent = {
+      enable = true,
+    },
   },
-  config = function(_, opts)
-    if opts.ensure_installed and #opts.ensure_installed > 0 then
-      require("nvim-treesitter").install(opts.ensure_installed)
-      for _, parser in ipairs(opts.ensure_installed) do
-        local filetypes = parser
-        vim.treesitter.language.register(parser, filetypes)
-        vim.api.nvim_create_autocmd({ "FileType" }, {
-          pattern = filetypes,
-          callback = function(event)
-            vim.treesitter.start(event.buf, parser)
-          end,
-        })
-      end
-    end
-  end,
 }
