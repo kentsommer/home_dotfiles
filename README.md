@@ -1,24 +1,33 @@
 # Usage
+* Install all dependencies
 * `./setup.sh`
 
-## General Required Packages
-* `stow`
-* `lsd`
-* `fish`
-* `neovim`
+# Required Dependencies
+
+### General
+
+For OSX only, packages can be installed via `./osx_install_deps.sh`. On linux
+hosts, packages should be installed manually from the appropriate distro
+package manager.
+
 * `ghostty`
-* `jujutsu`
+* `fish`
 * `mpv`
-* `yazi`
 * `firacode-nerd`
-* `zellij`
+* `stow`
+* `less`
 * `btop`
+* `lua`
+* `lsd`
+* `neovim`
+* `jujutsu`
+* `yazi`
+* `zellij`
 * `fastfetch`
 * `fzf`
-* `less`
-* `1password`
+* `1password-cli`
 
-### Linux only
+### Linux Only
 * `hyprland`
 * `hyprlauncher`
 * `hyprlock`
@@ -37,6 +46,8 @@
 * `noto-fonts-emoji`
 * `zen-browser`
 
-### OSX only
+### OSX Only
+* `homebrew`
 * `aerospace`
 * `alfred`
+* `JankyBorders`
