@@ -268,13 +268,13 @@ default_layout "compact"
 default_mode "normal"
 
 // Mouse mode.
-mouse_mode false
+mouse_mode true
 
 // Configure the scroll back buffer size
 scroll_buffer_size 500000
 
 // Enable or disable automatic copy (and clear) of selection when releasing mouse
-copy_on_select false
+copy_on_select true
 
 // When attaching to an existing session with other users,
 // should the session be mirrored
