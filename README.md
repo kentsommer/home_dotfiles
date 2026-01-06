@@ -1,4 +1,5 @@
-# Usage
+#iUsage
+brew 'FelixKratz/formulae/sketchybar'
 * Install all dependencies
 * `./setup.sh`
 
@@ -25,7 +26,9 @@ package manager.
 * `zellij`
 * `fastfetch`
 * `fzf`
+* `ripgrep`
 * `1password-cli`
+* `gemini-cli`
 
 ### Linux Only
 * `hyprland`
