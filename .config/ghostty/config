@@ -1,6 +1,6 @@
 command = "/bin/bash --login -c fish"
 font-family = "FiraCode Nerd Font Mono:style=Regular"
-theme = "TokyoNight"
+theme = "TokyoNight Storm"
 shell-integration = "fish"
 confirm-close-surface = "false"
 quit-after-last-window-closed = "true"
