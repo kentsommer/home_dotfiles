@@ -26,6 +26,7 @@ _darcs
 # Setup script
 setup.sh
 install_wallpaper_service.sh
+osx_install_deps.sh
 
 # Jujutsu
 \.jj

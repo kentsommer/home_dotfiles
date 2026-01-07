@@ -18,7 +18,7 @@ brew 'stow'
 brew 'less'
 brew 'rustup'
 brew 'btop'
-brew 'lsd'
+brew 'eza'
 brew 'neovim', args: ["HEAD"]
 brew 'jj'
 brew 'yazi'
