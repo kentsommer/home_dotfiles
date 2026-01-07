@@ -137,6 +137,7 @@ splash = false
 wallpaper {
     monitor =
     path = $WP_PATH
+    fit_mode = fill
 }
 EOF
     else
@@ -148,6 +149,7 @@ splash = false
 wallpaper {
     monitor = $MON
     path = $WP_PATH
+    fit_mode = fill
 }
 EOF
         done
