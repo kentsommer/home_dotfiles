@@ -1,3 +1,3 @@
 function ls --description 'List contents of directory'
-    command eza --icons $param $argv
+    command lsd $param $argv
 end

@@ -1,5 +1,4 @@
-#iUsage
-brew 'FelixKratz/formulae/sketchybar'
+# Usage
 * Install all dependencies
 * `./setup.sh`
 

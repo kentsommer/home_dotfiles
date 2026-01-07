@@ -1,0 +1,35 @@
+# Tokyo Night Storm palette for lsd
+user: 162    # Magenta/Pink
+group: 102   # Muted Blue/Grey
+permission:
+  read: 120    # Green
+  write: 215   # Orange/Yellow
+  exec: 162    # Magenta
+  exec-sticky: 162
+  no-access: 196
+date:
+  hour: 110    # Blue
+  day: 103     # Muted Purple
+  older: 66    # Darker Teal
+size:
+  none: 102
+  small: 120   # Green
+  medium: 215  # Orange
+  large: 162   # Magenta
+inode:
+  valid: 110
+  invalid: 196
+links:
+  valid: 73    # Cyan
+  invalid: 196
+tree-edge: 60  # Gutter/Guide color
+# File type colors
+filetype:
+  dir: 110     # Blue
+  file: 153    # Foreground (White/Cyan)
+  symlink: 73  # Cyan
+  pipe: 215
+  block-device: 215
+  char-device: 215
+  socket: 162
+  executable: 120
