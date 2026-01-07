@@ -20,4 +20,3 @@ use = [ "view-image-mpv", "reveal" ] # "view-image-mpv" refers to the custom ope
 [[open.prepend_rules]]
 mime = "audio/*"
 use = [ "play-audio-mpv", "reveal" ]
-

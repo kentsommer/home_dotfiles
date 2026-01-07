@@ -266,7 +266,7 @@ session_serialization true
 serialize_pane_viewport false
 
 // Theme
-theme "tokyo-night-dark"
+theme "tokyonight_storm"
 
 // The name of the default layout to load on startup
 default_layout "compact"
