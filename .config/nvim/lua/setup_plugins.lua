@@ -10,6 +10,14 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-
 require("lazy").setup("plugins")
-vim.cmd[[colorscheme tokyonight]]
+
+-- Load the colorscheme
+require("tokyonight").setup({
+    style = "storm",
+    transparent = true, 
+    styles = {
+        floats = "transparent",
+    },
+})
+vim.cmd.colorscheme("tokyonight")
