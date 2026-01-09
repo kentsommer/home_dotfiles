@@ -46,5 +46,6 @@ vim.opt.completeopt = { "menuone", "noinsert", "noselect", "fuzzy" }
 -- Tweak diagnostics (:help vim.diagnostic.config)
 vim.diagnostic.config({
   severity_sort = true,     -- Sort diagnostics by severity.
-  virtual_text = true,      -- Apply virtual text to line endings.
+  virtual_text = false,      -- Apply virtual text to line endings.
+  virtual_lines = { current_line = true }
 })
