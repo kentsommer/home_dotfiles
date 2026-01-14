@@ -6,11 +6,11 @@ if set -q FZF_DEFAULT_OPTS
       --ansi \
       --layout=reverse \
       --border=none \
-      --color=bg+:#2e3c64 \
-      --color=bg:#1f2335 \
+      --color=bg+:-1 \
+      --color=bg:-1 \
       --color=border:#29a4bd \
       --color=fg:#c0caf5 \
-      --color=gutter:#1f2335 \
+      --color=gutter:-1 \
       --color=header:#ff9e64 \
       --color=hl+:#2ac3de \
       --color=hl:#2ac3de \
@@ -29,11 +29,11 @@ else
       --ansi \
       --layout=reverse \
       --border=none \
-      --color=bg+:#2e3c64 \
-      --color=bg:#1f2335 \
+      --color=bg+:-1 \
+      --color=bg:-1 \
       --color=border:#29a4bd \
       --color=fg:#c0caf5 \
-      --color=gutter:#1f2335 \
+      --color=gutter:-1 \
       --color=header:#ff9e64 \
       --color=hl+:#2ac3de \
       --color=hl:#2ac3de \
