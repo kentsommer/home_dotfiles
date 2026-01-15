@@ -1,23 +1,8 @@
 keybinds {
     normal {
-        // Intercept `Enter`.
-        bind "Enter" {
-            // Passthru `Enter`.
-            WriteChars "\u{000D}";
-            // Invoke autolock to immediately assess proper lock state.
-            // (This provides a snappier experience compared to
-            // solely relying on `reaction_seconds` to elapse.)
-            MessagePlugin "autolock" {};
-        }
     }
     locked {
         bind "Ctrl g" { SwitchToMode "Normal"; }
-        bind "Alt z" {
-            // Disable the autolock plugin.
-            MessagePlugin "autolock" {payload "disable";};
-            // Unlock Zellij.
-            SwitchToMode "Normal";
-        }
     }
     resize {
         bind "Ctrl n" { SwitchToMode "Normal"; }
@@ -184,12 +169,6 @@ keybinds {
         bind "Space" { NextSwapLayout; }
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
     }
-    shared {
-        bind "Alt Shift z" {
-            // Enable the autolock plugin.
-            MessagePlugin "autolock" {payload "enable";};
-        }
-    }
     shared_except "locked" {
         bind "Ctrl g" { SwitchToMode "Locked"; }
         bind "Ctrl q" { Quit; }
@@ -207,24 +186,6 @@ keybinds {
         bind "Alt ]" { NextSwapLayout; }
         bind "Alt p" { TogglePaneInGroup; }
         bind "Alt Shift p" { ToggleGroupMarking; }
-        bind "Alt z" {
-            // Disable the autolock plugin.
-            MessagePlugin "autolock" {payload "disable";};
-            // Lock Zellij.
-            SwitchToMode "Locked";
-        }
-        bind "Ctrl h" {
-            MoveFocusOrTab "Left";
-        }
-        bind "Ctrl l" {
-            MoveFocusOrTab "Right";
-        }
-        bind "Ctrl j" {
-            MoveFocus "Down";
-        }
-        bind "Ctrl k" {
-            MoveFocus "Up";
-        }
     }
     shared_except "normal" "locked" {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
@@ -271,17 +232,6 @@ plugins {
     configuration location="zellij:configuration"
     plugin-manager location="zellij:plugin-manager"
     about location="zellij:about"
-    autolock location="file:~/.config/zellij/plugins/zellij-autolock.wasm" {
-        // Enabled at start?
-        is_enabled true
-        // Lock when any open these programs open.
-        triggers "nvim|fzf"
-        // Reaction to input occurs after this many seconds. (default=0.3)
-        // (An existing scheduled reaction prevents additional reactions.)
-        reaction_seconds "0.05"
-        // Print to Zellij log? (default=false)
-        print_to_log true
-    }
 }
 
 // Make window pane borders have rounded corners
@@ -293,7 +243,6 @@ ui {
 
 // Plugins to load in the background when a new session starts
 load_plugins {
-  autolock
 }
 
 // Use fish shell

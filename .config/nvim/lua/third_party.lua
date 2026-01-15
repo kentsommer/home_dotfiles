@@ -40,10 +40,6 @@ vim.pack.add({
   {
     src = 'https://github.com/nvim-mini/mini.statusline',
   },
-  -- zellij
-  {
-    src = 'https://github.com/fresh2dev/zellij.vim',
-  },
 })
 
 -- =============================================================================
