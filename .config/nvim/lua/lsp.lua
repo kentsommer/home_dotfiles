@@ -44,8 +44,22 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.opt.completeopt = { "menuone", "noinsert", "noselect", "fuzzy" }
 
 -- Tweak diagnostics (:help vim.diagnostic.config)
+local signs = {
+  Error = " ",
+  Warn  = " ",
+  Hint  = "󰠠 ",
+  Info  = " ",
+}
+
 vim.diagnostic.config({
-  severity_sort = true,     -- Sort diagnostics by severity.
-  virtual_text = false,      -- Apply virtual text to line endings.
-  virtual_lines = { current_line = true }
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = signs.Error,
+      [vim.diagnostic.severity.WARN]  = signs.Warn,
+      [vim.diagnostic.severity.HINT]  = signs.Hint,
+      [vim.diagnostic.severity.INFO]  = signs.Info,
+    },
+  },
+  severity_sort = true,
+  virtual_text = true,
 })
