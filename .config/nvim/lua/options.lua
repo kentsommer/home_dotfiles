@@ -43,7 +43,7 @@ vim.opt.wildignore = { "*.o", "*~", "*.pyc", "*/.git/*", "*/.DS_Store" }
 -- =============================================================================
 -- Visuals
 -- =============================================================================
-vim.opt.background = "dark"
+vim.opt.termguicolors = true
 vim.opt.guicursor = ""
 vim.opt.mouse = ""
 vim.opt.list = true

@@ -1,3 +1,8 @@
+------------
+-- Google --
+------------
+require("conditional_requires")
+
 -----------
 -- Utils --
 -----------
@@ -17,15 +22,9 @@ require("keymaps")
 -- Plugins --
 -------------
 require("third_party")
+require("first_party")
 
 --------------------------------------
 -- LSP, Completion, and Diagnostics --
 --------------------------------------
 require("lsp")
-
---------------------------
--- Google Plugin Extras --
---------------------------
-require("conditional_requires")
-
-require('zellij-nav').setup()

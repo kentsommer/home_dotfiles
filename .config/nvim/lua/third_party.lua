@@ -49,10 +49,14 @@ vim.pack.add({
 -- Catppuccin
 -- =============================================================================
 require("catppuccin").setup({
-    flavour = "mocha", -- latte, frappe, macchiato, mocha
-    transparent_background = true, -- disables setting the background color.
+    flavour = "mocha",
+    transparent_background = true,
     float = {
-        transparent = true, -- enable transparent floating windows
+        transparent = true,
+    },
+    integrations = {
+      blink_cmp = true,
+      fzf = true,
     },
 })
 vim.cmd.colorscheme "catppuccin"
@@ -104,14 +108,6 @@ vim.keymap.set({ "n", "i", "s" }, "<c-u>", function()
 end, { silent = true, expr = true })
 
 -- =============================================================================
--- Oil
--- =============================================================================
-require("oil").setup({
-  default_file_explorer=true,
-})
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open Oil" })
-
--- =============================================================================
 -- Treesitter
 -- =============================================================================
 require("nvim-treesitter").setup({
@@ -156,6 +152,11 @@ require("blink.cmp").setup({
   },
   fuzzy = { implementation = "prefer_rust_with_warning" }
 })
+
+-- =============================================================================
+-- Fzf
+-- =============================================================================
+require("fzf-lua").setup({ "border-fused" })
 
 -- =============================================================================
 -- mini.statusline
