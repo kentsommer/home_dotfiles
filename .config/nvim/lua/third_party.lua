@@ -66,6 +66,19 @@ vim.cmd.colorscheme "catppuccin"
 -- =============================================================================
 require("oil").setup({
   default_file_explorer=true,
+  use_default_keymaps = false,
+  keymaps = {
+    ["g?"] = { "actions.show_help", mode = "n" },
+    ["<CR>"] = "actions.select",
+    ["<C-v>"] = { "actions.select", opts = { vertical = true } },
+    ["q"] = { "actions.close", mode = "n" },
+    ["<C-r>"] = "actions.refresh",
+    ["-"] = { "actions.parent", mode = "n" },
+    ["gs"] = { "actions.change_sort", mode = "n" },
+    ["gx"] = "actions.open_external",
+    ["g."] = { "actions.toggle_hidden", mode = "n" },
+    ["g\\"] = { "actions.toggle_trash", mode = "n" },
+  },
 })
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open Oil" })
 
