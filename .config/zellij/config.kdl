@@ -269,7 +269,7 @@ session_serialization true
 serialize_pane_viewport false
 
 // Theme
-theme "tokyonight_storm"
+theme "catppuccin-mocha"
 
 // The name of the default layout to load on startup
 default_layout "compact"

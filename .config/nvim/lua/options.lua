@@ -9,7 +9,7 @@ vim.g.maplocalleader = ",,"
 -- =============================================================================
 vim.opt.updatetime = 250        -- Lower from 400 for snappier CursorHold events (LSP)
 vim.opt.timeoutlen = 500        -- Helps with the <Esc> mapping we discussed
-vim.opt.cmdheight = 1           -- Modern preference is 1 (or 0) to save screen space
+vim.opt.cmdheight = 0           -- Modern preference is 1 (or 0) to save screen space
 vim.opt.signcolumn = "yes"      -- Prevents "shifting" when LSP icons/signs appear
 vim.opt.scrolloff = 10          -- Keep cursor away from screen edges
 vim.opt.showmatch = true

@@ -17,29 +17,12 @@ vim.keymap.set(
 
 vim.keymap.set(
   'n', 
-  '<Esc>', 
-  '<cmd>nohlsearch<CR>', 
-  {
-    desc = "Clear search highlights",
-    silent = true,
-  }
-)
-
-vim.keymap.set(
-  'n', 
   '<space>', 
   '/', 
   {
-    desc = "Search forward",
+    desc = "Search",
     remap = true,
   }
-)
-
-vim.keymap.set(
-  'n', 
-  '<C-@>', 
-  '?', 
-  { remap = true, desc = "Search backward" }
 )
 
 vim.keymap.set(

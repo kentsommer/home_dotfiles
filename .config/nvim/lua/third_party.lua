@@ -1,7 +1,7 @@
 vim.pack.add({
-  -- Tokyonight
+  -- Catppuccin
   {
-    src = 'https://github.com/folke/tokyonight.nvim',
+    src = 'https://github.com/catppuccin/nvim',
   },
   -- Oil
   {
@@ -32,19 +32,27 @@ vim.pack.add({
   {
     src = 'https://github.com/junegunn/fzf.vim',
   },
+  -- vim-cool
+  {
+    src = 'https://github.com/romainl/vim-cool',
+  },
+  -- mini.statusline
+  {
+    src = 'https://github.com/nvim-mini/mini.statusline',
+  },
 })
 
 -- =============================================================================
--- Tokyonight
+-- Catppuccin
 -- =============================================================================
-require("tokyonight").setup({
-    style = "night",
-    transparent = true, 
-    styles = {
-        floats = "transparent",
+require("catppuccin").setup({
+    flavour = "mocha", -- latte, frappe, macchiato, mocha
+    transparent_background = true, -- disables setting the background color.
+    float = {
+        transparent = true, -- enable transparent floating windows
     },
 })
-vim.cmd.colorscheme("tokyonight")
+vim.cmd.colorscheme "catppuccin"
 
 -- =============================================================================
 -- Oil
@@ -141,3 +149,8 @@ require("blink.cmp").setup({
   },
   fuzzy = { implementation = "prefer_rust_with_warning" }
 })
+
+-- =============================================================================
+-- mini.statusline
+-- =============================================================================
+require('mini.statusline').setup()
