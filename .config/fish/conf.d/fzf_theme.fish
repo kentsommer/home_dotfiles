@@ -8,20 +8,20 @@ if set -q FZF_DEFAULT_OPTS
       --border=none \
       --color=bg+:-1 \
       --color=bg:-1 \
-      --color=border:#29a4bd \
-      --color=fg:#c0caf5 \
       --color=gutter:-1 \
-      --color=header:#ff9e64 \
-      --color=hl+:#2ac3de \
-      --color=hl:#2ac3de \
-      --color=info:#545c7e \
-      --color=marker:#ff007c \
-      --color=pointer:#ff007c \
-      --color=prompt:#2ac3de \
-      --color=query:#c0caf5:regular \
-      --color=scrollbar:#29a4bd \
-      --color=separator:#ff9e64 \
-      --color=spinner:#ff007c"
+      --color=spinner:#F5E0DC \
+      --color=hl:#F38BA8 \
+      --color=fg:#CDD6F4 \
+      --color=header:#CDD6F4 \
+      --color=info:#CDD6F4 \
+      --color=pointer:#F5E0DC \
+      --color=marker:#B4BEFE \
+      --color=fg+:#CDD6F4 \
+      --color=prompt:#CBA6F7 \
+      --color=hl+:#F38BA8 \
+      --color=selected-bg:#45475A \
+      --color=border:#6C7086 \
+      --color=label:#CDD6F4"
 else
     set -gx FZF_DEFAULT_OPTS "\
       --highlight-line \
@@ -31,19 +31,19 @@ else
       --border=none \
       --color=bg+:-1 \
       --color=bg:-1 \
-      --color=border:#29a4bd \
-      --color=fg:#c0caf5 \
       --color=gutter:-1 \
-      --color=header:#ff9e64 \
-      --color=hl+:#2ac3de \
-      --color=hl:#2ac3de \
-      --color=info:#545c7e \
-      --color=marker:#ff007c \
-      --color=pointer:#ff007c \
-      --color=prompt:#2ac3de \
-      --color=query:#c0caf5:regular \
-      --color=scrollbar:#29a4bd \
-      --color=separator:#ff9e64 \
-      --color=spinner:#ff007c"
+      --color=spinner:#F5E0DC \
+      --color=hl:#F38BA8 \
+      --color=fg:#CDD6F4 \
+      --color=header:#CDD6F4 \
+      --color=info:#CDD6F4 \
+      --color=pointer:#F5E0DC \
+      --color=marker:#B4BEFE \
+      --color=fg+:#CDD6F4 \
+      --color=prompt:#CBA6F7 \
+      --color=hl+:#F38BA8 \
+      --color=selected-bg:#45475A \
+      --color=border:#6C7086 \
+      --color=label:#CDD6F4"
 end
 
