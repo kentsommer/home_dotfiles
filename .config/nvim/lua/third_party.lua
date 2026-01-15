@@ -32,13 +32,17 @@ vim.pack.add({
   {
     src = 'https://github.com/junegunn/fzf.vim',
   },
-  -- vim-cool
+  -- Vim-cool
   {
     src = 'https://github.com/romainl/vim-cool',
   },
-  -- mini.statusline
+  -- Mini.statusline
   {
     src = 'https://github.com/nvim-mini/mini.statusline',
+  },
+  -- zellij
+  {
+    src = 'https://github.com/fresh2dev/zellij.vim',
   },
 })
 
