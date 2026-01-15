@@ -32,6 +32,9 @@ vim.pack.add({
   {
     src = 'https://github.com/junegunn/fzf.vim',
   },
+  {
+    src = 'https://github.com/ibhagwan/fzf-lua',
+  },
   -- Vim-cool
   {
     src = 'https://github.com/romainl/vim-cool',
@@ -65,6 +68,10 @@ vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open Oil" })
 -- =============================================================================
 -- Noice
 -- =============================================================================
+require ("notify").setup({
+  background_colour = "#000000",
+})
+
 require("noice").setup({
   lsp = {
     -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
