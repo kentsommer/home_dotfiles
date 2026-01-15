@@ -1,17 +1,22 @@
+-----------
+-- Utils --
+-----------
+require("functions")
+
 -------------
--- General --
+-- Options --
 -------------
-require("general")
+require("options")
+
+-------------
+-- Keymaps --
+-------------
+require("keymaps")
 
 -------------
 -- Plugins --
 -------------
-require("setup_plugins")
-
---------
--- UI --
---------
-require("ui")
+require("third_party")
 
 --------------------------------------
 -- LSP, Completion, and Diagnostics --

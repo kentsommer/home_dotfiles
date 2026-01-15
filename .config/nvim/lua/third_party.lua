@@ -1,0 +1,143 @@
+vim.pack.add({
+  -- Tokyonight
+  {
+    src = 'https://github.com/folke/tokyonight.nvim',
+  },
+  -- Oil
+  {
+    src = 'https://github.com/stevearc/oil.nvim',
+  },
+  -- Noice
+  {
+    src = 'https://github.com/MunifTanjim/nui.nvim',
+  },
+  {
+    src = 'https://github.com/rcarriga/nvim-notify',
+  },
+  {
+    src = 'https://github.com/folke/noice.nvim',
+  },
+  -- Treesitter
+  {
+    src = 'https://github.com/nvim-treesitter/nvim-treesitter',
+  },
+  -- Blink
+  {
+    src = 'https://github.com/saghen/blink.cmp',
+  },
+  -- Fzf
+  {
+    src = 'https://github.com/junegunn/fzf',
+  },
+  {
+    src = 'https://github.com/junegunn/fzf.vim',
+  },
+})
+
+-- =============================================================================
+-- Tokyonight
+-- =============================================================================
+require("tokyonight").setup({
+    style = "night",
+    transparent = true, 
+    styles = {
+        floats = "transparent",
+    },
+})
+vim.cmd.colorscheme("tokyonight")
+
+-- =============================================================================
+-- Oil
+-- =============================================================================
+require("oil").setup({
+  default_file_explorer=true,
+})
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open Oil" })
+
+-- =============================================================================
+-- Noice
+-- =============================================================================
+require("noice").setup({
+  lsp = {
+    -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+    override = {
+      ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+      ["vim.lsp.util.stylize_markdown"] = true,
+      ["cmp.entry.get_documentation"] = true,
+    },
+  },
+  -- you can enable a preset for easier configuration
+  presets = {
+    bottom_search = true, -- use a classic bottom cmdline for search
+    command_palette = true, -- position the cmdline and popupmenu together
+    long_message_to_split = true, -- long messages will be sent to a split
+    inc_rename = false, -- enables an input dialog for inc-rename.nvim
+    lsp_doc_border = true, -- add a border to hover docs and signature help
+  },
+})
+
+vim.keymap.set({ "n", "i", "s" }, "<c-d>", function()
+  if not require("noice.lsp").scroll(4) then
+    return "<c-d>"
+  end
+end, { silent = true, expr = true })
+
+vim.keymap.set({ "n", "i", "s" }, "<c-u>", function()
+  if not require("noice.lsp").scroll(-4) then
+    return "<c-u>"
+  end
+end, { silent = true, expr = true })
+
+-- =============================================================================
+-- Oil
+-- =============================================================================
+require("oil").setup({
+  default_file_explorer=true,
+})
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open Oil" })
+
+-- =============================================================================
+-- Treesitter
+-- =============================================================================
+require("nvim-treesitter").setup({
+  ensure_installed = {
+    "bash",
+    "c",
+    "cpp",
+    "html",
+    "javascript",
+    "jsdoc",
+    "json",
+    "json5",
+    "lua",
+    "luadoc",
+    "luap",
+    "markdown",
+    "markdown_inline",
+    "python",
+    "regex",
+    "toml",
+    "vim",
+    "vimdoc",
+    "yaml",
+  },
+  auto_install = true,
+  highlight = {
+    enable = true,
+  },
+  indent = {
+    enable = true,
+  },
+})
+
+-- =============================================================================
+-- Blink
+-- =============================================================================
+require("blink.cmp").setup({
+  keymap = { preset = "enter" },
+  completion = { documentation = { auto_show = false } },
+  sources = {
+    default = { "lsp", "buffer" },
+  },
+  fuzzy = { implementation = "prefer_rust_with_warning" }
+})
