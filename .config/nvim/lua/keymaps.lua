@@ -37,7 +37,7 @@ vim.keymap.set(
 
 vim.keymap.set(
   'n',
-  '<C-l><C-l>',
+  'ml',
   ':set invnumber<CR>',
   { 
     desc = "Toggle Line Numbers",

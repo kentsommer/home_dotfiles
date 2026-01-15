@@ -27,3 +27,5 @@ require("lsp")
 -- Google Plugin Extras --
 --------------------------
 require("conditional_requires")
+
+require('zellij-nav').setup()
