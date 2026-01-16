@@ -43,15 +43,14 @@ vim.opt.listchars:append({ trail = "»" })
 vim.opt.foldcolumn = "1"
 
 -- Clipboard
-vim.o.clipboard = 'unnamedplus'
-vim.g.clipboard = {
-  name = 'OSC 52',
-  copy = {
-    ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
-    ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
-  },
-  paste = {
-    ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
-    ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
-  },
-}
+vim.opt.clipboard = ""
+vim.api.nvim_create_autocmd("TextYankPost", {
+  desc = "OSC 52 on yank only",
+  callback = function()
+    if vim.v.event.operator == "y" then
+      local text = vim.v.event.regcontents
+      local regtype = vim.v.event.regtype
+      require('vim.ui.clipboard.osc52').copy('+')(text)
+    end
+  end,
+})
