@@ -1,30 +1,15 @@
-------------
--- Google --
-------------
-require("conditional_requires")
+-- 1. Core Configuration
+require("config.options")
+require("config.keymaps")
 
------------
--- Utils --
------------
-require("functions")
+-- 2. Plugins
+require("plugins.ui")
+require("plugins.editor")
+require("plugins.lsp")
+require("plugins.multiplexer")
 
--------------
--- Options --
--------------
-require("options")
-
--------------
--- Keymaps --
--------------
-require("keymaps")
-
--------------
--- Plugins --
--------------
-require("third_party")
-require("first_party")
-
---------------------------------------
--- LSP, Completion, and Diagnostics --
---------------------------------------
-require("lsp")
+-- 3. Environment Specific
+local plugins_google = vim.fn.stdpath("config") .. "/lua/plugins/google.lua"
+if vim.uv.fs_stat(plugins_google) then
+  require("plugins.google")
+end
