@@ -41,3 +41,17 @@ vim.opt.mouse = ""              -- Disable mouse
 vim.opt.list = true
 vim.opt.listchars:append({ trail = "»" })
 vim.opt.foldcolumn = "1"
+
+-- Clipboard
+vim.o.clipboard = 'unnamedplus'
+vim.g.clipboard = {
+  name = 'OSC 52',
+  copy = {
+    ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+  },
+  paste = {
+    ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+  },
+}
