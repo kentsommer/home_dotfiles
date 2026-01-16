@@ -1,7 +1,6 @@
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("lsp", { clear = true }),
   callback = function(args)
-    -- Enable ppt-in features, if the LSP server supports them.
     local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
 
     local lsp_buffer_augroup = vim.api.nvim_create_augroup(string.format("lsp-buffer-%d", args.data.client_id), { clear = false })
@@ -11,7 +10,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
     -- LSP keybindings.
     local function map(mode, key, fn, desc)
-      vim.keymap.set(mode, key, fn, { silent = true, buffer = bufnr, desc = "LSP:" .. desc })
+      vim.keymap.set(mode, key, fn, { silent = true, buffer = args.buf, desc = "LSP:" .. desc })
     end
     map("n", "mR", vim.lsp.buf.rename, "Rename symbol")
     map("n", "mr", vim.lsp.buf.references, "List references")
