@@ -1,6 +1,7 @@
 -- 1. Core Configuration
 require("config.options")
 require("config.keymaps")
+require("config.autocmds")
 
 -- 2. Plugins
 require("plugins.ui")
