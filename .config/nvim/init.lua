@@ -7,6 +7,7 @@ require("config.autocmds")
 require("plugins.ui")
 require("plugins.editor")
 require("plugins.lsp")
+require("plugins.notifications")
 require("plugins.multiplexer")
 
 -- 3. Environment Specific

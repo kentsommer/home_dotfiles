@@ -36,7 +36,7 @@ vim.opt.undofile = true
 vim.opt.wildignore = { "*.o", "*~", "*.pyc", "*/.git/*", "*/.DS_Store" }
 
 -- Visuals
-vim.opt.guicursor = ""          -- Block cursor in all modes
+vim.opt.guicursor = "a:block"   -- Block cursor in all modes
 vim.opt.mouse = ""              -- Disable mouse
 vim.opt.list = true
 vim.opt.listchars:append({ trail = "»" })

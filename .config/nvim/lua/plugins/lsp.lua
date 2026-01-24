@@ -41,7 +41,19 @@ vim.pack.add({
 
 require("blink.cmp").setup({
   keymap = { preset = "enter" },
-  completion = { documentation = { auto_show = false } },
+  completion = {
+    menu = {
+      border = "rounded",
+    },
+    documentation = {
+      auto_show = false,
+    },
+  },
+  signature = {
+    window = {
+      border = "rounded",
+    },
+  },
   sources = {
     default = { "lsp", "buffer" },
   },
@@ -74,6 +86,7 @@ vim.api.nvim_create_autocmd("PackChanged", {
 -- -----------------------------------------------------------------------------
 -- General LSP Configuration
 -- -----------------------------------------------------------------------------
+
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("lsp", { clear = true }),
   callback = function(args)
@@ -103,7 +116,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
 
     -- Highlight symbol under cursor
-    if client:supports_method("textDocument/documentHighlight", bufnr) then
+    if client:supports_method("textDocument/documentHighlight", bufnr) and vim.bo[bufnr].filetype ~= "markdown" then
       -- Fallback highlight groups
       if not vim.fn.hlexists("LspReferenceRead") then
         vim.api.nvim_set_hl(0, "LspReferenceRead", { link = "Visual" })
@@ -115,12 +128,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
       vim.api.nvim_create_autocmd("CursorHold", {
         group = highlight_augroup,
         buffer = bufnr,
-        callback = vim.lsp.buf.document_highlight,
+        callback = function()
+          pcall(vim.lsp.buf.document_highlight)
+        end,
       })
       vim.api.nvim_create_autocmd("CursorMoved", {
         group = highlight_augroup,
         buffer = bufnr,
-        callback = vim.lsp.buf.clear_references,
+        callback = function()
+          pcall(vim.lsp.buf.clear_references)
+        end,
       })
     end
   end,
